@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Abi</title>
+</head>
+
+<body>
+  <h1>Hello</h1>
+
+  <h2>Welcome to my Website!!</h2>
+
+  <img src="https://cdn.pixabay.com/photo/2018/07/09/15/19/flamingo-3526365_960_720.jpg" height="40%" width="40%" />
+
+  <div class="swichcontainer">
+    <div class="swicthToggle"></div>
+  </div>
+</body>
+
+<style>
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  body {
+    background-color: #ffffff;
+    transition: 1s ease;
+  }
+
+  body.on {
+    background-color: #000000;
+  }
+
+  h1 {
+    font-size: 150pt;
+    margin-top: 8%;
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 200;
+    animation: colorchange 25s infinite;
+    color: rgb(58, 57, 57);
+  }
+
+  h2 {
+    font-size: 50pt;
+    text-align: center;
+    font-style: italic;
+    font-variant: normal;
+    font-weight: 400;
+    color: #312f2f;
+  }
+
+  @keyframes colorchange {
+    0% {
+      color: rgb(243, 49, 49);
+    }
+    20% {
+      color: rgb(243, 240, 49);
+    }
+    40% {
+      color: rgb(243, 143, 49);
+    }
+    50% {
+      color: rgb(49, 133, 243);
+    }
+    60% {
+      color: rgb(94, 243, 49);
+    }
+    70% {
+      color: rgb(49, 133, 243);
+    }
+    80% {
+      color: rgb(243, 143, 49);
+    }
+    90% {
+      color: rgb(243, 240, 49);
+    }
+    100% {
+      color: rgb(243, 49, 49);
+    }
+  }
+
+  img {
+    margin-left: 30%;
+    margin-top: 3%;
+  }
+
+  .swicthToggle {
+    display: flex;
+    margin-right: 20px;
+    padding: 3px;
+    width: 80px;
+    min-height: 40px;
+    background-color: #312f2f;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+
+  .swicthToggle:before {
+    content: "☼";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.4s ease;
+  }
+
+  .swicthToggle.on {
+    background-color: #ececed;
+  }
+
+  h2 {
+    color: #000000;
+    transition: 1s ease;
+  }
+
+  h2.on {
+    color: #ffffff;
+  }
+
+  .swicthToggle.on:before {
+    content: "☾";
+    transform: translateX(34px) rotate(180deg);
+  }
+
+  .swichcontainer {
+    position: absolute;
+    margin-left: 94%;
+    margin-bottom: 3px;
+    font-size: 20pt;
+  }
+</style>
+
+<script>
+  const SWITCH = document.querySelector(".swicthToggle");
+  const BODY = document.querySelector("body");
+  const H2 = document.querySelector("h2");
+
+  SWITCH.addEventListener("click", function () {
+
+    if (this.classList.contains("on")) {
+
+      this.classList.remove("on");
+      BODY.classList.remove("on");
+      H2.classList.remove("on");
+
+    } else {
+
+      this.classList.add("on");
+      BODY.classList.add("on");
+      H2.classList.add("on");
+
+    }
+
+  });
+
+</script>
+
+</html>
+
